@@ -1,11 +1,44 @@
 #! /usr/bin/env bash
 
 # When the program is first loaded, display a greeting to the user.
-# Then, display a menu that outlines the possible operations:
-  # Add
-  # Subtract
-  # Exit
-# Then, capture the user selection.
-# If the selection matches a supported operation, execute the operation.
-# If the selection does not match a support operation, display an error message.
-# When the operation is complete, redisplay the menu.
+let sum=0
+while [[ $sum -lt 10 ]]; do
+
+  echo "Start Calculating"
+  # Then, display a menu that outlines the possible operations:
+    # Add
+    # Subtract
+    # Exit
+
+    # Input type of operation
+  echo "Enter Choice :"
+  echo "1. Addition"
+  echo "2. Subtraction"
+  echo "3. Exit"
+
+  read ch
+
+  # Then, capture the user selection.
+  case $ch in
+  1)echo "Enter Two numbers : "
+  read a
+  read b
+  res=`echo $a + $b | bc`
+  echo "Result : $res"
+  ;;
+  2)echo "Enter Two numbers : "
+  read a
+  read b
+  res=`echo $a - $b | bc`
+  echo "Result : $res"
+  ;;
+  3)exit
+  ;;
+  *)echo "Unknown command"
+  ;; 
+  esac
+done
+
+  
+
+
