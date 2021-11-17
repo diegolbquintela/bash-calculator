@@ -34,7 +34,7 @@ while [[ $sum -lt 10 ]]; do
   ;;
   3)exit
   ;;
-  *)echo "Unknown command"
+  *)echo "Error: Unknown command"
   ;; 
   esac
 done
